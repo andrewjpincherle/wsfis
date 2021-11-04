@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="d05f6c18-8b5d-427e-ae65-52946c25ec9c" activeEnvironment="Default" name="AccessRestriction-4.4-RestfulSOAP" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="d8b5225a-4867-43ae-8a7c-1bc91db05a76" wsaVersion="NONE" name="accessRestrictionServiceSoap11" type="wsdl" bindingName="{http://fis.com/webservices/definitions}accessRestrictionServiceSoap11" soapVersion="1_1" anonymous="optional" definition="https://10.166.41.208:22220/AccessRestrictionWebservice/soap/accessRestriction.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://10.166.41.208:22220/AccessRestrictionWebservice/soap/accessRestriction.wsdl"><con:part><con:url>https://10.166.41.208:22220/AccessRestrictionWebservice/soap/accessRestriction.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://fis.com/webservices/definitions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch0="http://schema.domain.cortex.fis.com/authUserDetails" xmlns:sch1="http://schema.domain.cortex.fis.com/accessRestrictionMaintenanceDetails" xmlns:sch2="http://schema.domain.cortex.fis.com/accessRestrictionService" xmlns:sch3="http://schema.domain.cortex.fis.com/accessRestrictionResponseDetails" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://fis.com/webservices/definitions">
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.domain.cortex.fis.com/authUserDetails" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:authusrdet="http://schema.domain.cortex.fis.com/authUserDetails">
+      <xsd:complexType name="AuthUserDetails">
+        <xsd:sequence>
+          <xsd:element name="authUserId" type="xsd:string"/>
+          <xsd:element name="authPassword" type="xsd:string"/>
+          <xsd:element name="authInstCode" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.domain.cortex.fis.com/accessRestrictionMaintenanceDetails" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:accrstmntdet="http://schema.domain.cortex.fis.com/accessRestrictionMaintenanceDetails">
+      <xsd:complexType name="AccessRestrictionMaintenanceDetails">
+        <xsd:sequence>
+          <xsd:element name="instCode" type="xsd:string"/>
+          <xsd:element name="userName" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="restrictionType" nillable="true" type="xsd:short"/>
+          <xsd:element minOccurs="0" name="allowVal" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="allowSvc" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="denyVal" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="denySvc" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="denyAll" nillable="true" type="xsd:short"/>
+          <xsd:element name="email" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.domain.cortex.fis.com/accessRestrictionService" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:accrst="http://schema.domain.cortex.fis.com/accessRestrictionService" xmlns:accrstmntdet="http://schema.domain.cortex.fis.com/accessRestrictionMaintenanceDetails" xmlns:accrstresdet="http://schema.domain.cortex.fis.com/accessRestrictionResponseDetails" xmlns:authusrdet="http://schema.domain.cortex.fis.com/authUserDetails">
+      <xsd:import namespace="http://schema.domain.cortex.fis.com/accessRestrictionMaintenanceDetails"/>
+      <xsd:import namespace="http://schema.domain.cortex.fis.com/authUserDetails"/>
+      <xsd:import namespace="http://schema.domain.cortex.fis.com/accessRestrictionResponseDetails"/>
+      <xsd:element name="addAccessRestrictionRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="messageID" type="xsd:int"/>
+            <xsd:element name="authUserDet" type="authusrdet:AuthUserDetails"/>
+            <xsd:element name="addDet" type="accrstmntdet:AccessRestrictionMaintenanceDetails"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateAccessRestrictionRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="messageID" type="xsd:int"/>
+            <xsd:element name="authUserDet" type="authusrdet:AuthUserDetails"/>
+            <xsd:element name="updateDet" type="accrstmntdet:AccessRestrictionMaintenanceDetails"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="resetPasswordAccessRestrictionRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="messageID" type="xsd:int"/>
+            <xsd:element name="authUserDet" type="authusrdet:AuthUserDetails"/>
+            <xsd:element name="instCode" type="xsd:string"/>
+            <xsd:element name="userName" type="xsd:string"/>
+            <xsd:element name="email" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="addAccessRestrictionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="responseDet" type="accrstresdet:AccessRestrictionResponseDetails"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateAccessRestrictionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="responseDet" type="accrstresdet:AccessRestrictionResponseDetails"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="resetPasswordAccessRestrictionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="responseDet" type="accrstresdet:AccessRestrictionResponseDetails"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.domain.cortex.fis.com/accessRestrictionResponseDetails" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:accrstresdet="http://schema.domain.cortex.fis.com/accessRestrictionResponseDetails">
+      <xsd:complexType name="AccessRestrictionResponseDetails">
+        <xsd:sequence>
+          <xsd:element name="messageID" type="xsd:int"/>
+          <xsd:element name="instCode" nillable="true" type="xsd:string"/>
+          <xsd:element name="userName" nillable="true" type="xsd:string"/>
+          <xsd:element name="actionCode" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="resetPasswordAccessRestrictionResponse">
+    <wsdl:part element="sch2:resetPasswordAccessRestrictionResponse" name="resetPasswordAccessRestrictionResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateAccessRestrictionRequest">
+    <wsdl:part element="sch2:updateAccessRestrictionRequest" name="updateAccessRestrictionRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addAccessRestrictionResponse">
+    <wsdl:part element="sch2:addAccessRestrictionResponse" name="addAccessRestrictionResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="resetPasswordAccessRestrictionRequest">
+    <wsdl:part element="sch2:resetPasswordAccessRestrictionRequest" name="resetPasswordAccessRestrictionRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateAccessRestrictionResponse">
+    <wsdl:part element="sch2:updateAccessRestrictionResponse" name="updateAccessRestrictionResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addAccessRestrictionRequest">
+    <wsdl:part element="sch2:addAccessRestrictionRequest" name="addAccessRestrictionRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="accessRestrictionService">
+    <wsdl:operation name="resetPasswordAccessRestriction">
+      <wsdl:input message="tns:resetPasswordAccessRestrictionRequest" name="resetPasswordAccessRestrictionRequest"></wsdl:input>
+      <wsdl:output message="tns:resetPasswordAccessRestrictionResponse" name="resetPasswordAccessRestrictionResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateAccessRestriction">
+      <wsdl:input message="tns:updateAccessRestrictionRequest" name="updateAccessRestrictionRequest"></wsdl:input>
+      <wsdl:output message="tns:updateAccessRestrictionResponse" name="updateAccessRestrictionResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addAccessRestriction">
+      <wsdl:input message="tns:addAccessRestrictionRequest" name="addAccessRestrictionRequest"></wsdl:input>
+      <wsdl:output message="tns:addAccessRestrictionResponse" name="addAccessRestrictionResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="accessRestrictionServiceSoap11" type="tns:accessRestrictionService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="resetPasswordAccessRestriction">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="resetPasswordAccessRestrictionRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="resetPasswordAccessRestrictionResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateAccessRestriction">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="updateAccessRestrictionRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateAccessRestrictionResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addAccessRestriction">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="addAccessRestrictionRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addAccessRestrictionResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="accessRestrictionServiceService">
+    <wsdl:port binding="tns:accessRestrictionServiceSoap11" name="accessRestrictionServiceSoap11">
+      <soap:address location="http://10.166.41.208:22220/AccessRestrictionWebservice-4.4.0/accessRestriction"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.166.41.208:22220/AccessRestrictionWebservice-4.4.0/accessRestriction</con:endpoint></con:endpoints><con:operation id="f4314152-e882-4e01-abe0-ac52da2a2f0b" isOneWay="false" action="" name="addAccessRestriction" bindingOperationName="addAccessRestriction" type="Request-Response" outputName="addAccessRestrictionResponse" inputName="addAccessRestrictionRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b3039f42-42e2-4664-b8ef-4ebf0cb7bab6" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.166.41.208:22220/AccessRestrictionWebservice-4.4.0/accessRestriction</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://schema.domain.cortex.fis.com/accessRestrictionService" xmlns:aut="http://schema.domain.cortex.fis.com/authUserDetails" xmlns:acc1="http://schema.domain.cortex.fis.com/accessRestrictionMaintenanceDetails">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <acc:addAccessRestrictionRequest>\r
+         <acc:messageID>?</acc:messageID>\r
+         <acc:authUserDet>\r
+            <aut:authUserId>?</aut:authUserId>\r
+            <aut:authPassword>?</aut:authPassword>\r
+            <aut:authInstCode>?</aut:authInstCode>\r
+         </acc:authUserDet>\r
+         <acc:addDet>\r
+            <acc1:instCode>?</acc1:instCode>\r
+            <acc1:userName>?</acc1:userName>\r
+            <!--Optional:-->\r
+            <acc1:restrictionType>?</acc1:restrictionType>\r
+            <!--Optional:-->\r
+            <acc1:allowVal>?</acc1:allowVal>\r
+            <!--Optional:-->\r
+            <acc1:allowSvc>?</acc1:allowSvc>\r
+            <!--Optional:-->\r
+            <acc1:denyVal>?</acc1:denyVal>\r
+            <!--Optional:-->\r
+            <acc1:denySvc>?</acc1:denySvc>\r
+            <!--Optional:-->\r
+            <acc1:denyAll>?</acc1:denyAll>\r
+            <acc1:email>?</acc1:email>\r
+         </acc:addDet>\r
+      </acc:addAccessRestrictionRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fis.com/webservices/definitions/accessRestrictionService/addAccessRestrictionRequest"/></con:call></con:operation><con:operation id="617b1665-4388-4abe-88c2-be3ca55f63d0" isOneWay="false" action="" name="resetPasswordAccessRestriction" bindingOperationName="resetPasswordAccessRestriction" type="Request-Response" outputName="resetPasswordAccessRestrictionResponse" inputName="resetPasswordAccessRestrictionRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b179dabb-e48f-4308-9dcf-d67b44ac8e83" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.166.41.208:22220/AccessRestrictionWebservice-4.4.0/accessRestriction</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://schema.domain.cortex.fis.com/accessRestrictionService" xmlns:aut="http://schema.domain.cortex.fis.com/authUserDetails">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <acc:resetPasswordAccessRestrictionRequest>\r
+         <acc:messageID>?</acc:messageID>\r
+         <acc:authUserDet>\r
+            <aut:authUserId>?</aut:authUserId>\r
+            <aut:authPassword>?</aut:authPassword>\r
+            <aut:authInstCode>?</aut:authInstCode>\r
+         </acc:authUserDet>\r
+         <acc:instCode>?</acc:instCode>\r
+         <acc:userName>?</acc:userName>\r
+         <acc:email>?</acc:email>\r
+      </acc:resetPasswordAccessRestrictionRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fis.com/webservices/definitions/accessRestrictionService/resetPasswordAccessRestrictionRequest"/></con:call></con:operation><con:operation id="ef3abef7-745d-4bc9-8f28-bdd7d3e2d562" isOneWay="false" action="" name="updateAccessRestriction" bindingOperationName="updateAccessRestriction" type="Request-Response" outputName="updateAccessRestrictionResponse" inputName="updateAccessRestrictionRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="293cf98c-8948-4bdf-beb1-87b8f7130859" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.166.41.208:22220/AccessRestrictionWebservice-4.4.0/accessRestriction</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://schema.domain.cortex.fis.com/accessRestrictionService" xmlns:aut="http://schema.domain.cortex.fis.com/authUserDetails" xmlns:acc1="http://schema.domain.cortex.fis.com/accessRestrictionMaintenanceDetails">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <acc:updateAccessRestrictionRequest>\r
+         <acc:messageID>?</acc:messageID>\r
+         <acc:authUserDet>\r
+            <aut:authUserId>?</aut:authUserId>\r
+            <aut:authPassword>?</aut:authPassword>\r
+            <aut:authInstCode>?</aut:authInstCode>\r
+         </acc:authUserDet>\r
+         <acc:updateDet>\r
+            <acc1:instCode>?</acc1:instCode>\r
+            <acc1:userName>?</acc1:userName>\r
+            <!--Optional:-->\r
+            <acc1:restrictionType>?</acc1:restrictionType>\r
+            <!--Optional:-->\r
+            <acc1:allowVal>?</acc1:allowVal>\r
+            <!--Optional:-->\r
+            <acc1:allowSvc>?</acc1:allowSvc>\r
+            <!--Optional:-->\r
+            <acc1:denyVal>?</acc1:denyVal>\r
+            <!--Optional:-->\r
+            <acc1:denySvc>?</acc1:denySvc>\r
+            <!--Optional:-->\r
+            <acc1:denyAll>?</acc1:denyAll>\r
+            <acc1:email>?</acc1:email>\r
+         </acc:updateDet>\r
+      </acc:updateAccessRestrictionRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fis.com/webservices/definitions/accessRestrictionService/updateAccessRestrictionRequest"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

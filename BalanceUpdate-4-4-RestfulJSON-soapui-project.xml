@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="725e6f30-ad0a-49d2-8cd0-0bc9cf7d3c59" activeEnvironment="Default" name="BalanceUpdate-4.4-RestfulJSON" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="46010a92-a0f4-4203-9ee3-8f2863388ac0" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://10.166.41.208:22220" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://10.166.41.208:22220</con:endpoint></con:endpoints><con:resource name="BalanceUpdate.json" path="/BalanceUpdateWebservice/rest/balanceUpdate.json" id="b6adcf38-46e8-4bcb-9987-1ea301790fa8"><con:settings/><con:parameters/><con:method name="BalanceUpdate.json 1" id="eadc3512-2b6c-4b3e-9b21-b9d4177d0d24" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>400</con:status><con:params/><con:element xmlns:bal="https://10.166.41.208/BalanceUpdateWebservice/rest/balanceUpdate.json">bal:Fault</con:element></con:representation><con:request name="ANP" id="70c5d141-f4c7-412b-83df-5fafc64e39a0" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://10.166.41.208:22220</con:endpoint><con:request>{
+  "amtUpdate": 50,
+  "currCode": "GBP",
+  "description": "TEST",
+  "requestDet": {
+    "authMethod": 1,
+    "cardID": "1443728700013500",
+    "localDate": ${today},
+    "localTime": ${time},
+    "messageID": ${msgid},
+    "userID": "string",
+    "userPassword": "string"
+  }
+}</con:request><con:originalUri>https://10.166.41.208/BalanceUpdateWebservice/rest/balanceUpdate.json</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="fullRequest" id="487d12f1-fd5a-491a-96cc-3f149019f3d6" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://10.166.41.208:22220</con:endpoint><con:request>{
+  "accno": "string",
+  "amtUpdate": 0,
+  "currCode": "string",
+  "description": "string",
+  "extCode": "string",
+  "function": "string",
+  "requestDet": {
+    "accessCode": "string",
+    "authMethod": 0,
+    "cardID": "string",
+    "crdAcptID": "string",
+    "cvv": "string",
+    "dob": "yyyy-MM-dd",
+    "instCode": "string",
+    "itemSrc": 0,
+    "lastName": "string",
+    "loadFundsType": 0,
+    "loadSrc": 0,
+    "localDate": "yyyy-MM-dd",
+    "localTime": 0,
+    "loginID": "string",
+    "messageID": 0,
+    "pan": "string",
+    "secDet": {
+      "securityDetailsArray": [
+        {
+          "charPos": 0,
+          "secChkID": 0,
+          "secValue": "string"
+        }
+      ]
+    },
+    "track2": "string",
+    "userID": "string",
+    "userPassword": "string"
+  }
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

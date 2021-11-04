@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="cdde3d87-16a9-4940-bacb-02412bdb98cb" activeEnvironment="Default" name="BalanceAdjustment-4.4-RestfulSOAP" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="0d2d2a5f-2d4c-4bf9-aac2-0fe614500009" wsaVersion="NONE" name="balanceAdjustmentServiceSoap11" type="wsdl" bindingName="{http://fis.com/webservices/definitions}balanceAdjustmentServiceSoap11" soapVersion="1_1" anonymous="optional" definition="https://10.166.41.208:22220/BalanceAdjustmentWebservice/soap/balanceAdjustment.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://10.166.41.208:22220/BalanceAdjustmentWebservice/soap/balanceAdjustment.wsdl"><con:part><con:url>https://10.166.41.208:22220/BalanceAdjustmentWebservice/soap/balanceAdjustment.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://fis.com/webservices/definitions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch0="http://schema.domain.cortex.fis.com/securityDetails" xmlns:sch1="http://schema.domain.cortex.fis.com/balanceAdjustmentService" xmlns:sch2="http://schema.domain.cortex.fis.com/requestDetails" xmlns:sch3="http://schema.domain.cortex.fis.com/responseDetails" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://fis.com/webservices/definitions">
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.domain.cortex.fis.com/securityDetails" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:secdet="http://schema.domain.cortex.fis.com/securityDetails">
+      <xsd:complexType name="SecurityDetails">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="charPos" nillable="true" type="xsd:int"/>
+          <xsd:element name="secChkID" type="xsd:long"/>
+          <xsd:element name="secValue" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_SecurityDetails">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="securityDetailsArray" type="secdet:SecurityDetails"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.domain.cortex.fis.com/balanceAdjustmentService" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:reqdet="http://schema.domain.cortex.fis.com/requestDetails" xmlns:resdet="http://schema.domain.cortex.fis.com/responseDetails" xmlns:secdet="http://schema.domain.cortex.fis.com/securityDetails" xmlns:tns="http://schema.domain.cortex.fis.com/balanceAdjustmentService">
+      <xsd:import namespace="http://schema.domain.cortex.fis.com/requestDetails"/>
+      <xsd:import namespace="http://schema.domain.cortex.fis.com/securityDetails"/>
+      <xsd:import namespace="http://schema.domain.cortex.fis.com/responseDetails"/>
+      <xsd:element name="balanceAdjustmentRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="requestDet" type="reqdet:RequestDetails"/>
+            <xsd:element name="amtAdjustment" type="xsd:double"/>
+            <xsd:element name="currCode" type="xsd:string"/>
+            <xsd:element name="debOrCred" type="xsd:short"/>
+            <xsd:element name="description" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="forcePost" nillable="true" type="xsd:int"/>
+            <xsd:element minOccurs="0" name="extCode" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="walletRef" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="walletID" nillable="true" type="xsd:long"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="balanceAdjustmentResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="responseDet" nillable="true" type="resdet:ResponseDetails"/>
+            <xsd:element minOccurs="0" name="itemId" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="avlBal" nillable="true" type="xsd:double"/>
+            <xsd:element minOccurs="0" name="currCode" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="walletRef" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="walletID" nillable="true" type="xsd:long"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.domain.cortex.fis.com/requestDetails" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:reqdet="http://schema.domain.cortex.fis.com/requestDetails" xmlns:secdet="http://schema.domain.cortex.fis.com/securityDetails">
+      <xsd:import namespace="http://schema.domain.cortex.fis.com/securityDetails"/>
+      <xsd:complexType name="RequestDetails">
+        <xsd:sequence>
+          <xsd:element name="messageID" type="xsd:int"/>
+          <xsd:element name="instCode" type="xsd:string"/>
+          <xsd:element name="userID" type="xsd:string"/>
+          <xsd:element name="userPassword" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="track2" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="authMethod" nillable="true" type="xsd:short"/>
+          <xsd:element minOccurs="0" name="PAN" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="cardID" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="DOB" nillable="true" type="xsd:date"/>
+          <xsd:element minOccurs="0" name="CVV" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="accessCode" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="lastName" nillable="true" type="xsd:string"/>
+          <xsd:element name="localDate" type="xsd:date"/>
+          <xsd:element name="localTime" type="xsd:long"/>
+          <xsd:element minOccurs="0" name="crdAcptID" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="loginID" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="loadFundsType" nillable="true" type="xsd:short"/>
+          <xsd:element minOccurs="0" name="loadSrc" nillable="true" type="xsd:short"/>
+          <xsd:element minOccurs="0" name="secDet" nillable="true" type="secdet:ArrayOf_SecurityDetails"/>
+          <xsd:element minOccurs="0" name="itemSrc" nillable="true" type="xsd:short"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.domain.cortex.fis.com/responseDetails" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schema.domain.cortex.fis.com/responseDetails">
+      <xsd:complexType name="ResponseDetails">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="PAN" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="cardID" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="actionCode" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="instCode" nillable="true" type="xsd:string"/>
+          <xsd:element name="localDate" type="xsd:date"/>
+          <xsd:element name="localTime" type="xsd:long"/>
+          <xsd:element minOccurs="0" name="loginID" nillable="true" type="xsd:string"/>
+          <xsd:element name="messageID" type="xsd:int"/>
+          <xsd:element name="sysDate" type="xsd:date"/>
+          <xsd:element minOccurs="0" name="track2" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="balanceAdjustmentResponse">
+    <wsdl:part element="sch1:balanceAdjustmentResponse" name="balanceAdjustmentResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="balanceAdjustmentRequest">
+    <wsdl:part element="sch1:balanceAdjustmentRequest" name="balanceAdjustmentRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="balanceAdjustmentService">
+    <wsdl:operation name="balanceAdjustment">
+      <wsdl:input message="tns:balanceAdjustmentRequest" name="balanceAdjustmentRequest"></wsdl:input>
+      <wsdl:output message="tns:balanceAdjustmentResponse" name="balanceAdjustmentResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="balanceAdjustmentServiceSoap11" type="tns:balanceAdjustmentService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="balanceAdjustment">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="balanceAdjustmentRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="balanceAdjustmentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="balanceAdjustmentServiceService">
+    <wsdl:port binding="tns:balanceAdjustmentServiceSoap11" name="balanceAdjustmentServiceSoap11">
+      <soap:address location="http://10.166.41.208:22220/BalanceAdjustmentWebservice-4.4.0/balanceAdjustment"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.166.41.208:22220/BalanceAdjustmentWebservice-4.4.0/balanceAdjustment</con:endpoint></con:endpoints><con:operation id="5a2a2623-5968-4071-a6d2-2b33ada8ad3c" isOneWay="false" action="" name="balanceAdjustment" bindingOperationName="balanceAdjustment" type="Request-Response" outputName="balanceAdjustmentResponse" inputName="balanceAdjustmentRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f26b25e2-dda2-42b7-a7a1-5b9584579f45" name="ANP"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://10.166.41.208:22220/BalanceAdjustmentWebservice/soap/balanceAdjustment</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bal="http://schema.domain.cortex.fis.com/balanceAdjustmentService" xmlns:req="http://schema.domain.cortex.fis.com/requestDetails" xmlns:sec="http://schema.domain.cortex.fis.com/securityDetails">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <bal:balanceAdjustmentRequest>\r
+        <bal:requestDet>
+            <req:messageID>${messageid}17</req:messageID>
+            <req:instCode>ANP</req:instCode>
+            <req:userID>ANP_UAT_ADM</req:userID>
+            <req:userPassword>j$aX%17r</req:userPassword>
+            <req:authMethod>1</req:authMethod>
+            <req:cardID>1443728700013500</req:cardID>
+            <req:localDate>${date}</req:localDate>
+            <req:localTime>${time}</req:localTime>
+         </bal:requestDet>
+         <bal:amtAdjustment>10</bal:amtAdjustment>
+         <bal:currCode>GBP</bal:currCode>
+         <bal:debOrCred>1</bal:debOrCred>
+         <bal:description>Test</bal:description>
+      </bal:balanceAdjustmentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fis.com/webservices/definitions/balanceAdjustmentService/balanceAdjustmentRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

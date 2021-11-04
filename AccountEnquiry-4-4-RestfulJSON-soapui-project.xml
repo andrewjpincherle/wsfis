@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="5ca1b42b-38bb-43aa-82f5-51ee69cd9a2a" activeEnvironment="Default" name="AccountEnquiry-4.4-RestfulJSON" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="4782e982-ad72-407e-8916-21953df3d16f" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://10.166.41.208:22220" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings><con:setting id="com.eviware.soapui.impl.rest.actions.service.Wadl2JavaAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Automatic Package Names" value="false"/>
+  <con:entry key="Output Directory" value=""/>
+  <con:entry key="JAXB Customization File(s)" value=""/>
+  <con:entry key="Java Args" value=""/>
+  <con:entry key="Package" value=""/>
+  <con:entry key="Tool Args" value=""/>
+</xml-fragment>]]></con:setting></con:settings><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://10.166.41.208:22220</con:endpoint></con:endpoints><con:resource name="AccountEnquiry.json" path="/AccountEnquiryWebservice/rest/accountEnquiry.json" id="cb2d591f-82bb-4049-8fcf-5f69d5ab812d"><con:settings/><con:parameters/><con:method name="AccountEnquiry.json 1" id="48aa9165-2465-4a7e-870c-fc348e487aaf" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>400</con:status><con:params/><con:element xmlns:acc="https://10.166.41.208/AccountEnquiryWebservice/rest/accountEnquiry.json">acc:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:acc="https://10.166.41.208/AccountEnquiryWebservice/rest/accountEnquiry.json">acc:Response</con:element></con:representation><con:request name="ANP" id="672eb403-bfdf-4985-ae3c-99aa1fbc8936" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://10.166.41.208:22220</con:endpoint><con:request>{
+  "dataSrc": 0,
+  "endDate": "2021-03-24",
+  "numTxns": 0,
+  "requestDet": {
+    "authMethod": 1,
+    "cardID": "1443728700013500",
+    "instCode": "ANP",
+    "localDate": ${today},
+    "localTime": ${time},
+    "messageID": ${msgid},
+    "userID": "ANP_UAT_ADM",
+    "userPassword": "j$aX%17r"
+  }
+ }</con:request><con:originalUri>https://10.166.41.208/AccountEnquiryWebservice/rest/accountEnquiry.json</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="fullRequest" id="651c20c7-4efd-40f2-bf35-174c4c40df2d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://10.166.41.208:22220</con:endpoint><con:request>{
+  "dataSrc": 0,
+  "endDate": "2021-03-24",
+  "inclDeclined": 0,
+  "numTxns": 0,
+  "requestDet": {
+    "accessCode": "string",
+    "authMethod": 0,
+    "cardID": "string",
+    "crdAcptID": "string",
+    "cvv": "string",
+    "dob": "yyyy-MM-dd",
+    "instCode": "string",
+    "itemSrc": 0,
+    "lastName": "string",
+    "loadFundsType": 0,
+    "loadSrc": 0,
+    "localDate": "yyyy-MM-dd",
+    "localTime": 0,
+    "loginID": "string",
+    "messageID": 0,
+    "pan": "string",
+    "secDet": {
+      "securityDetailsArray": [
+        {
+          "charPos": 0,
+          "secChkID": 0,
+          "secValue": "string"
+        }
+      ]
+    },
+    "track2": "string",
+    "userID": "string",
+    "userPassword": "string"
+  },
+  "startDate": "2021-03-24",
+  "txnFilter": "string"
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

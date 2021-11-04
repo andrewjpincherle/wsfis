@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="cff59dd5-3d40-4561-acb4-8844342acc45" activeEnvironment="Default" name="BalanceAdjustment-4.4-RestfulJSON" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="c98256c4-0aff-406d-ac15-5dc20d69a3c1" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://10.166.41.208:22220" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://10.166.41.208:22220</con:endpoint></con:endpoints><con:resource name="BalanceAdjustment.json" path="/BalanceAdjustmentWebservice/rest/balanceAdjustment.json" id="a5371bec-e514-422d-829c-9b2582dfb1ec"><con:settings/><con:parameters/><con:method name="BalanceAdjustment.json 1" id="38dfea3a-04d7-4eb3-a5ea-89ae6cce2e27" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>400</con:status><con:params/></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:bal="https://10.166.41.208/BalanceAdjustmentWebservice/rest/balanceAdjustment.json">bal:Response</con:element></con:representation><con:request name="fullRequest" id="835820aa-4bc0-4bf0-87fb-b22038f884ed" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://10.166.41.208:22220</con:endpoint><con:request>{
+  "amtAdjustment": 0,
+  "currCode": "string",
+  "debOrCred": 0,
+  "description": "string",
+  "extCode": "string",
+  "forcePost": 0,
+  "requestDet": {
+    "accessCode": "string",
+    "authMethod": 0,
+    "cardID": "string",
+    "crdAcptID": "string",
+    "cvv": "string",
+    "dob": "yyyy-MM-dd",
+    "instCode": "string",
+    "itemSrc": 0,
+    "lastName": "string",
+    "loadFundsType": 0,
+    "loadSrc": 0,
+    "localDate": "yyyy-MM-dd",
+    "localTime": 0,
+    "loginID": "string",
+    "messageID": 0,
+    "pan": "string",
+    "secDet": {
+      "securityDetailsArray": [
+        {
+          "charPos": 0,
+          "secChkID": 0,
+          "secValue": "string"
+        }
+      ]
+    },
+    "track2": "string",
+    "userID": "string",
+    "userPassword": "string"
+  },
+  "walletID": 0,
+  "walletRef": "string"
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="ANP" id="7a4d6468-40c3-40d4-8942-2af86354c90b" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://10.166.41.208:22220</con:endpoint><con:request>{
+  "requestDet": {
+    "authMethod": 1,
+    "cardID": "1443728700013500",
+    "instCode": "ANP",
+    "localDate": ${today},
+    "localTime": ${time},
+    "messageID": ${msgid},
+    "userID": "ANP_UAT_ADM",
+    "userPassword": "j$aX%17r"
+  }
+}</con:request><con:originalUri>https://10.166.41.208/BalanceAdjustmentWebservice/rest/balanceAdjustment.json</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

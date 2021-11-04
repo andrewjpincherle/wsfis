@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="71c96986-68c4-434f-8841-4512bd11058a" activeEnvironment="Default" name="CardApplication-4.4-RestfulSOAP" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="6a8c0d29-05dc-4f7e-bdf5-d06b24c51bc2" wsaVersion="NONE" name="cardApplicationServiceSoap11" type="wsdl" bindingName="{http://fis.com/webservices/definitions}cardApplicationServiceSoap11" soapVersion="1_1" anonymous="optional" definition="https://10.166.41.208:22220/CardApplicationWebservice/soap/cardApplication.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://10.166.41.208:22220/CardApplicationWebservice/soap/cardApplication.wsdl"><con:part><con:url>https://10.166.41.208:22220/CardApplicationWebservice/soap/cardApplication.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://fis.com/webservices/definitions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch0="http://schema.domain.cortex.fis.com/additionalDetails" xmlns:sch1="http://schema.domain.cortex.fis.com/securityDetails" xmlns:sch2="http://schema.domain.cortex.fis.com/cardDetails" xmlns:sch3="http://schema.domain.cortex.fis.com/cardApplicationService" xmlns:sch4="http://schema.domain.cortex.fis.com/requestDetails" xmlns:sch5="http://schema.domain.cortex.fis.com/responseDetails" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://fis.com/webservices/definitions">
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.domain.cortex.fis.com/additionalDetails" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:adddet="http://schema.domain.cortex.fis.com/additionalDetails">
+      <xsd:complexType name="AdditionalDetails">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="reference" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="value" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="valueDate" nillable="true" type="xsd:date"/>
+          <xsd:element minOccurs="0" name="valueTime" nillable="true" type="xsd:long"/>
+          <xsd:element minOccurs="0" name="valueAmt" nillable="true" type="xsd:double"/>
+          <xsd:element minOccurs="0" name="valueCurrCode" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_AdditionalDetails">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="additionalDetailsArray" type="adddet:AdditionalDetails"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.domain.cortex.fis.com/securityDetails" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:secdet="http://schema.domain.cortex.fis.com/securityDetails">
+      <xsd:complexType name="SecurityDetails">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="charPos" nillable="true" type="xsd:int"/>
+          <xsd:element name="secChkID" type="xsd:long"/>
+          <xsd:element name="secValue" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_SecurityDetails">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="securityDetailsArray" type="secdet:SecurityDetails"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.domain.cortex.fis.com/cardDetails" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:crddet="http://schema.domain.cortex.fis.com/cardDetails">
+      <xsd:complexType name="ArrayOf_CardDetails">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="cardDetails" nillable="true" type="crddet:CardDetails"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CardDetails">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="result" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="PAN" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="cardID" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="DOB" nillable="true" type="xsd:date"/>
+          <xsd:element minOccurs="0" name="lastName" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="title" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="firstName" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="addrL1" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="addrL2" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="addrL3" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="city" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="county" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="postcode" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="country" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="workAddrL1" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="workAddrL2" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="workAddrL3" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="workCity" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="workCounty" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="workCountry" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="workPostcode" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="workTel" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="pobox" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="tel" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="email" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="fax" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="mobTel" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="dlvTitle" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="dlvFirstName" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="dlvLastName" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="dlvAddrL1" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="dlvAddrL2" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="dlvAddrL3" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="dlvCity" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="dlvPostcode" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="dlvCountry" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="dlvCounty" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="dlvTel" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="dlvEffDate" nillable="true" type="xsd:date"/>
+          <xsd:element minOccurs="0" name="dlvExpDate" nillable="true" type="xsd:date"/>
+          <xsd:element minOccurs="0" name="maritalStatus" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="sex" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="statCode" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="crdproduct" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="custCode" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="accno" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="currCode" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="expDate" nillable="true" type="xsd:date"/>
+          <xsd:element minOccurs="0" name="effDate" nillable="true" type="xsd:date"/>
+          <xsd:element minOccurs="0" name="svccode" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="embossName" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="additionalNo" nillable="true" type="xsd:int"/>
+          <xsd:element minOccurs="0" name="dateCreated" nillable="true" type="xsd:date"/>
+          <xsd:element minOccurs="0" name="crdprogram" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="crddesign" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="pin" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="refuseCheck" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="mailShots" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="discret" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="userdata" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="userdata1" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="userdata2" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="userdata3" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="userdata4" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="dlvMethod" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="dateActivated" nillable="true" type="xsd:date"/>
+          <xsd:element minOccurs="0" name="loginID" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="imageID" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="renew" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="brncode" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="denyMCC" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="denySvc" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="accType" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="CVC2" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="itemId" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.domain.cortex.fis.com/cardApplicationService" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:crddet="http://schema.domain.cortex.fis.com/cardDetails" xmlns:reqdet="http://schema.domain.cortex.fis.com/requestDetails" xmlns:resdet="http://schema.domain.cortex.fis.com/responseDetails" xmlns:tns="http://schema.domain.cortex.fis.com/cardApplicationService">
+      <xsd:import namespace="http://schema.domain.cortex.fis.com/requestDetails"/>
+      <xsd:import namespace="http://schema.domain.cortex.fis.com/responseDetails"/>
+      <xsd:import namespace="http://schema.domain.cortex.fis.com/cardDetails"/>
+      <xsd:element name="cardApplicationRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="requestDet" type="reqdet:RequestDetails"/>
+            <xsd:element minOccurs="0" name="crdprogram" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="crddesign" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="carrierPAN" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="stockNoStart" nillable="true" type="xsd:int"/>
+            <xsd:element minOccurs="0" name="currCode" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="crdproduct" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="amtLoad" nillable="true" type="xsd:double"/>
+            <xsd:element minOccurs="0" name="expDate" nillable="true" type="xsd:date"/>
+            <xsd:element minOccurs="0" name="lang" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="pin" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="cardName" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="noOfCards" nillable="true" type="xsd:int"/>
+            <xsd:element minOccurs="0" name="cardDetails" nillable="true" type="xsd:anyURI"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cardApplicationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="responseDet" type="resdet:ResponseDetails"/>
+            <xsd:element minOccurs="0" name="crdDet" nillable="true" type="crddet:ArrayOf_CardDetails"/>
+            <xsd:element minOccurs="0" name="noOfCardsProduced" nillable="true" type="xsd:int"/>
+            <xsd:element minOccurs="0" name="noOfCards" nillable="true" type="xsd:int"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.domain.cortex.fis.com/requestDetails" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:reqdet="http://schema.domain.cortex.fis.com/requestDetails" xmlns:secdet="http://schema.domain.cortex.fis.com/securityDetails">
+      <xsd:import namespace="http://schema.domain.cortex.fis.com/securityDetails"/>
+      <xsd:complexType name="RequestDetails">
+        <xsd:sequence>
+          <xsd:element name="messageID" type="xsd:int"/>
+          <xsd:element name="instCode" type="xsd:string"/>
+          <xsd:element name="userID" type="xsd:string"/>
+          <xsd:element name="userPassword" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="track2" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="authMethod" nillable="true" type="xsd:short"/>
+          <xsd:element minOccurs="0" name="PAN" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="cardID" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="DOB" nillable="true" type="xsd:date"/>
+          <xsd:element minOccurs="0" name="CVV" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="accessCode" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="lastName" nillable="true" type="xsd:string"/>
+          <xsd:element name="localDate" type="xsd:date"/>
+          <xsd:element name="localTime" type="xsd:long"/>
+          <xsd:element minOccurs="0" name="crdAcptID" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="loginID" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="loadFundsType" nillable="true" type="xsd:short"/>
+          <xsd:element minOccurs="0" name="loadSrc" nillable="true" type="xsd:short"/>
+          <xsd:element minOccurs="0" name="secDet" nillable="true" type="secdet:ArrayOf_SecurityDetails"/>
+          <xsd:element minOccurs="0" name="itemSrc" nillable="true" type="xsd:short"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.domain.cortex.fis.com/responseDetails" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schema.domain.cortex.fis.com/responseDetails">
+      <xsd:complexType name="ResponseDetails">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="PAN" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="cardID" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="actionCode" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="instCode" nillable="true" type="xsd:string"/>
+          <xsd:element name="localDate" type="xsd:date"/>
+          <xsd:element name="localTime" type="xsd:long"/>
+          <xsd:element minOccurs="0" name="loginID" nillable="true" type="xsd:string"/>
+          <xsd:element name="messageID" type="xsd:int"/>
+          <xsd:element name="sysDate" type="xsd:date"/>
+          <xsd:element minOccurs="0" name="track2" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="cardApplicationResponse">
+    <wsdl:part element="sch3:cardApplicationResponse" name="cardApplicationResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cardApplicationRequest">
+    <wsdl:part element="sch3:cardApplicationRequest" name="cardApplicationRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="cardApplicationService">
+    <wsdl:operation name="cardApplication">
+      <wsdl:input message="tns:cardApplicationRequest" name="cardApplicationRequest"></wsdl:input>
+      <wsdl:output message="tns:cardApplicationResponse" name="cardApplicationResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="cardApplicationServiceSoap11" type="tns:cardApplicationService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="cardApplication">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="cardApplicationRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cardApplicationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="cardApplicationServiceService">
+    <wsdl:port binding="tns:cardApplicationServiceSoap11" name="cardApplicationServiceSoap11">
+      <soap:address location="http://10.166.41.208:22220/CardApplicationWebservice-4.4.0/cardApplication"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.166.41.208:22220/CardApplicationWebservice-4.4.0/cardApplication</con:endpoint></con:endpoints><con:operation id="3c5f6019-5054-4f5e-87b8-e674e6a1c656" isOneWay="false" action="" name="cardApplication" bindingOperationName="cardApplication" type="Request-Response" outputName="cardApplicationResponse" inputName="cardApplicationRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="207543f2-63b5-43f4-a5c6-dfed6b332e55" name="ANP"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://10.166.41.208:22220/CardApplicationWebservice/soap/cardApplication</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:car="http://schema.domain.cortex.fis.com/cardApplicationService" xmlns:req="http://schema.domain.cortex.fis.com/requestDetails" xmlns:sec="http://schema.domain.cortex.fis.com/securityDetails">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <car:cardApplicationRequest>
+         <car:requestDet>
+            <req:messageID>${messageid}17</req:messageID>
+            <req:instCode>ANP</req:instCode>
+            <req:userID>ANP_UAT_ADM</req:userID>
+            <req:userPassword>j$aX%17r</req:userPassword>
+            <req:authMethod>1</req:authMethod>
+            <req:cardID>1443728700013500</req:cardID>
+            <req:localDate>${date}</req:localDate>
+            <req:localTime>${time}</req:localTime>
+         </car:requestDet>
+         <car:crdprogram>DMILES</car:crdprogram>
+         <car:crddesign>CORPGB</car:crddesign>
+         <car:currCode>GBP</car:currCode>
+         <car:crdproduct>COGB</car:crdproduct>
+         <car:expDate>2025-01-31</car:expDate>
+         <car:lang>1</car:lang>
+         <car:pin>1</car:pin>
+         <car:noOfCards>1</car:noOfCards>
+      </car:cardApplicationRequest>
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fis.com/webservices/definitions/cardApplicationService/cardApplicationRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

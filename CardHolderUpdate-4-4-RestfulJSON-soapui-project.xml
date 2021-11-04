@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="e8b152a0-0260-49ea-9325-f607c0621a2b" activeEnvironment="Default" name="CardHolderUpdate-4.4-RestfulJSON" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="996faea3-424b-4035-86b4-8037f672c76e" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://10.166.41.208:22220" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://10.166.41.208:22220</con:endpoint></con:endpoints><con:resource name="CardHolderUpdate.json" path="/CardHolderUpdateWebservice/rest/cardHolderUpdate.json" id="990b46d1-9eeb-45bb-8d15-ba6a6e12e9b3"><con:settings/><con:parameters/><con:method name="CardHolderUpdate.json 1" id="24031f48-5b5d-4090-98ff-31353c975d68" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:car="https://10.166.41.208/CardHolderUpdateWebservice/rest/cardHolderUpdate.json">car:Response</con:element></con:representation><con:request name="ANP" id="8ea30b26-6608-4554-b061-d14c6e9a063d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://10.166.41.208:22220</con:endpoint><con:request>{
+  "commonUpdateDet": {
+     "mobTel": "string"
+  },
+  "requestDet": {
+    "authMethod": 1,
+    "cardID": "1443728700013500",
+    "instCode": "ANP",
+    "localDate": ${today},
+    "localTime": ${time},
+    "messageID": ${msgid},
+    "userID": "ANP_UAT_ADM",
+    "userPassword": "j$aX%17r"
+  }
+
+ }</con:request><con:originalUri>https://10.166.41.208/CardHolderUpdateWebservice/rest/cardHolderUpdate.json</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="fullRequest" id="8c699231-22e9-4b8e-adab-91ff4e6c9a5d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://10.166.41.208:22220</con:endpoint><con:request>{
+  "commonUpdateDet": {
+    "addrDet": {
+      "addressLine1": "string",
+      "addressLine2": "string",
+      "addressLine3": "string",
+      "city": "string",
+      "country": "string",
+      "county": "string",
+      "postCode": "string"
+    },
+    "crdproduct": "string",
+    "designRef": "string",
+    "firstName": "string",
+    "mobTel": "string",
+    "tel": "string",
+    "title": "string",
+    "userdata": "string",
+    "userdata1": "string",
+    "userdata2": "string",
+    "userdata3": "string",
+    "userdata4": "string"
+  },
+  "requestDet": {
+    "accessCode": "string",
+    "authMethod": 0,
+    "cardID": "string",
+    "crdAcptID": "string",
+    "cvv": "string",
+    "dob": "yyyy-MM-dd",
+    "instCode": "string",
+    "itemSrc": 0,
+    "lastName": "string",
+    "loadFundsType": 0,
+    "loadSrc": 0,
+    "localDate": "yyyy-MM-dd",
+    "localTime": 0,
+    "loginID": "string",
+    "messageID": 0,
+    "pan": "string",
+    "secDet": {
+      "securityDetailsArray": [
+        {
+          "charPos": 0,
+          "secChkID": 0,
+          "secValue": "string"
+        }
+      ]
+    },
+    "track2": "string",
+    "userID": "string",
+    "userPassword": "string"
+  },
+  "updateDet": {
+    "accProfileRef": "string",
+    "accType": "string",
+    "additionalCrdDet": {
+      "additionalDetailsArray": [
+        {
+          "reference": "string",
+          "value": "string",
+          "valueAmt": 0,
+          "valueCurrCode": "string",
+          "valueDate": "2021-03-24",
+          "valueTime": 0
+        }
+      ]
+    },
+    "additionalCustDet": {
+      "additionalDetailsArray": [
+        {
+          "reference": "string",
+          "value": "string",
+          "valueAmt": 0,
+          "valueCurrCode": "string",
+          "valueDate": "2021-03-24",
+          "valueTime": 0
+        }
+      ]
+    },
+    "brncode": "string",
+    "crdProfileRef": "string",
+    "custFundCrdDet": {
+      "fundCrdCVC": "string",
+      "fundCrdEffDate": "2021-03-24",
+      "fundCrdExpDate": "2021-03-24",
+      "fundCrdIssNum": "string",
+      "fundCrdPAN": "string",
+      "fundCrdType": " VISA – Visa\_r\nDELTA – Visa Debit/Delta\_r\nUKE – Visa Electron\_r\nMC – MasterCard\_r\n"
+    },
+    "custProfileRef": "string",
+    "denyMCC": "string",
+    "denySvc": "string",
+    "discret": "string",
+    "dlvAddrDet": {
+      "addressLine1": "string",
+      "addressLine2": "string",
+      "addressLine3": "string",
+      "city": "string",
+      "country": "string",
+      "county": "string",
+      "postCode": "string"
+    },
+    "dlvDaysValid": 0,
+    "dlvEffDate": "2021-03-24",
+    "dlvFirstName": "string",
+    "dlvLastName": "string",
+    "dlvMethod": "string",
+    "dlvTel": "string",
+    "dlvTitle": "string",
+    "email": "string",
+    "embossName": "string",
+    "fax": "string",
+    "feeTier": "string",
+    "formFactorID": "string",
+    "imageID": "string",
+    "isoLang": "string",
+    "mailShots": "string",
+    "maritalStatus": "string",
+    "memo": "string",
+    "memoScope": 0,
+    "memoUser": "string",
+    "miscSvc": {
+      "miscellaneousServiceTypesArray": [
+        {
+          "svcBalNotifyCycle": 0,
+          "svcMinBal": 0,
+          "svcSrc": 0,
+          "svcStatus": 0,
+          "svcType": 0
+        }
+      ]
+    },
+    "miscSvcLoadProfile": {
+      "miscellaneousServiceLoadProfileArray": [
+        {
+          "svcLoadFundsType": "string",
+          "svcLoadSrc": "string",
+          "svcMaxLoad": 0,
+          "svcMinLoad": 0
+        }
+      ]
+    },
+    "modSecDet": {
+      "updateSecurityDetailsArray": [
+        {
+          "secChkID": 0,
+          "secValue": "string"
+        }
+      ]
+    },
+    "newAccessCode": "string",
+    "pin": "string",
+    "pobox": "string",
+    "profileRef": "string",
+    "programRef": "string",
+    "refuseCheck": "string",
+    "renew": "string",
+    "sex": "string",
+    "workAddrDet": {
+      "addressLine1": "string",
+      "addressLine2": "string",
+      "addressLine3": "string",
+      "city": "string",
+      "country": "string",
+      "county": "string",
+      "postCode": "string"
+    },
+    "workTel": "string"
+  }
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

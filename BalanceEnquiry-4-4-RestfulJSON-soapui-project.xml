@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="a8854476-744a-49a6-bf49-218bf960c3f1" activeEnvironment="Default" name="BalanceEnquiry-4.4-RestfulJSON" resourceRoot="" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="85f9d7bc-a123-40a2-90c2-ea2dcac427fa" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://10.166.41.208:22220" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://10.166.41.208:22220</con:endpoint></con:endpoints><con:resource name="BalanceEnquiry.json" path="/BalanceEnquiryWebservice/rest/balanceEnquiry.json" id="e5f957ed-2d60-4f28-adc3-f81963af3dc7"><con:settings/><con:parameters/><con:method name="BalanceEnquiry.json 1" id="b6d5d4ba-06ea-41df-ac1a-bd28a573ae83" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:bal="https://10.166.41.208/BalanceEnquiryWebservice/rest/balanceEnquiry.json">bal:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/plain;charset=ISO-8859-1</con:mediaType><con:status>400</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="ANP" id="2c825ffb-4578-496e-ad77-56d6e700580c" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://10.166.41.208:22220</con:endpoint><con:request>{
+  "requestDet": {
+    "authMethod": 1,
+    "cardID": "1443728700013500",
+    "instCode": "ANP",
+    "localDate": ${today},
+    "localTime": ${time},
+    "messageID": ${msgid},
+    "userID": "ANP_UAT_ADM",
+    "userPassword": "j$aX%17r"
+  }
+}</con:request><con:originalUri>https://10.166.41.208/BalanceEnquiryWebservice/rest/balanceEnquiry.json</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="fullRequest" id="c6ebbee8-765a-4fc0-bd46-bd31e2ecd8ab" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://10.166.41.208:22220</con:endpoint><con:request>{
+  "requestDet": {
+    "accessCode": "string",
+    "authMethod": 0,
+    "cardID": "string",
+    "crdAcptID": "string",
+    "cvv": "string",
+    "dob": "yyyy-MM-dd",
+    "instCode": "string",
+    "itemSrc": 0,
+    "lastName": "string",
+    "loadFundsType": 0,
+    "loadSrc": 0,
+    "localDate": "yyyy-MM-dd",
+    "localTime": 0,
+    "loginID": "string",
+    "messageID": 0,
+    "pan": "string",
+    "secDet": {
+      "securityDetailsArray": [
+        {
+          "charPos": 0,
+          "secChkID": 0,
+          "secValue": "string"
+        }
+      ]
+    },
+    "track2": "string",
+    "userID": "string",
+    "userPassword": "string"
+  }
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

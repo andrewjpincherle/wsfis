@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="8303a528-e6e6-4fe2-ae0a-5ab2da4dc47c" activeEnvironment="Default" name="CardHolderContactEnquiry-4.4-RestfulSOAP" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="c3f33e46-2fc4-4cee-b1f5-5ab7c54b527e" wsaVersion="NONE" name="cardHolderContactEnquiryServiceSoap11" type="wsdl" bindingName="{http://fis.com/webservices/definitions}cardHolderContactEnquiryServiceSoap11" soapVersion="1_1" anonymous="optional" definition="https://10.166.41.208:22220/CardHolderContactEnquiryWebservice/soap/cardHolderContactEnquiry.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://10.166.41.208:22220/CardHolderContactEnquiryWebservice/soap/cardHolderContactEnquiry.wsdl"><con:part><con:url>https://10.166.41.208:22220/CardHolderContactEnquiryWebservice/soap/cardHolderContactEnquiry.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://fis.com/webservices/definitions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch0="http://schema.domain.cortex.fis.com/additionalDetails" xmlns:sch1="http://schema.domain.cortex.fis.com/securityDetails" xmlns:sch2="http://schema.domain.cortex.fis.com/cardHolderContactEnquiryService" xmlns:sch3="http://schema.domain.cortex.fis.com/requestDetails" xmlns:sch4="http://schema.domain.cortex.fis.com/responseDetails" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://fis.com/webservices/definitions">
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.domain.cortex.fis.com/additionalDetails" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:adddet="http://schema.domain.cortex.fis.com/additionalDetails">
+      <xsd:complexType name="AdditionalDetails">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="reference" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="value" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="valueDate" nillable="true" type="xsd:date"/>
+          <xsd:element minOccurs="0" name="valueTime" nillable="true" type="xsd:long"/>
+          <xsd:element minOccurs="0" name="valueAmt" nillable="true" type="xsd:double"/>
+          <xsd:element minOccurs="0" name="valueCurrCode" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_AdditionalDetails">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="additionalDetailsArray" type="adddet:AdditionalDetails"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.domain.cortex.fis.com/securityDetails" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:secdet="http://schema.domain.cortex.fis.com/securityDetails">
+      <xsd:complexType name="SecurityDetails">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="charPos" nillable="true" type="xsd:int"/>
+          <xsd:element name="secChkID" type="xsd:long"/>
+          <xsd:element name="secValue" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_SecurityDetails">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="securityDetailsArray" type="secdet:SecurityDetails"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.domain.cortex.fis.com/cardHolderContactEnquiryService" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:reqdet="http://schema.domain.cortex.fis.com/requestDetails" xmlns:resdet="http://schema.domain.cortex.fis.com/responseDetails" xmlns:secdet="http://schema.domain.cortex.fis.com/securityDetails" xmlns:tns="http://schema.domain.cortex.fis.com/cardHolderContactEnquiryService">
+      <xsd:import namespace="http://schema.domain.cortex.fis.com/requestDetails"/>
+      <xsd:import namespace="http://schema.domain.cortex.fis.com/securityDetails"/>
+      <xsd:import namespace="http://schema.domain.cortex.fis.com/responseDetails"/>
+      <xsd:element name="cardHolderContactEnquiryRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="requestDet" type="reqdet:RequestDetails"/>
+            <xsd:element minOccurs="0" name="enquiryType" nillable="true" type="xsd:int"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cardHolderContactEnquiryResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="responseDet" type="resdet:ResponseDetails"/>
+            <xsd:element minOccurs="0" name="email" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="mobTel" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="enquiryType" nillable="true" type="xsd:int"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.domain.cortex.fis.com/requestDetails" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:reqdet="http://schema.domain.cortex.fis.com/requestDetails" xmlns:secdet="http://schema.domain.cortex.fis.com/securityDetails">
+      <xsd:import namespace="http://schema.domain.cortex.fis.com/securityDetails"/>
+      <xsd:complexType name="RequestDetails">
+        <xsd:sequence>
+          <xsd:element name="messageID" type="xsd:int"/>
+          <xsd:element name="instCode" type="xsd:string"/>
+          <xsd:element name="userID" type="xsd:string"/>
+          <xsd:element name="userPassword" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="track2" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="authMethod" nillable="true" type="xsd:short"/>
+          <xsd:element minOccurs="0" name="PAN" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="cardID" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="DOB" nillable="true" type="xsd:date"/>
+          <xsd:element minOccurs="0" name="CVV" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="accessCode" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="lastName" nillable="true" type="xsd:string"/>
+          <xsd:element name="localDate" type="xsd:date"/>
+          <xsd:element name="localTime" type="xsd:long"/>
+          <xsd:element minOccurs="0" name="crdAcptID" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="loginID" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="loadFundsType" nillable="true" type="xsd:short"/>
+          <xsd:element minOccurs="0" name="loadSrc" nillable="true" type="xsd:short"/>
+          <xsd:element minOccurs="0" name="secDet" nillable="true" type="secdet:ArrayOf_SecurityDetails"/>
+          <xsd:element minOccurs="0" name="itemSrc" nillable="true" type="xsd:short"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.domain.cortex.fis.com/responseDetails" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schema.domain.cortex.fis.com/responseDetails">
+      <xsd:complexType name="ResponseDetails">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="PAN" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="cardID" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="actionCode" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="instCode" nillable="true" type="xsd:string"/>
+          <xsd:element name="localDate" type="xsd:date"/>
+          <xsd:element name="localTime" type="xsd:long"/>
+          <xsd:element minOccurs="0" name="loginID" nillable="true" type="xsd:string"/>
+          <xsd:element name="messageID" type="xsd:int"/>
+          <xsd:element name="sysDate" type="xsd:date"/>
+          <xsd:element minOccurs="0" name="track2" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="cardHolderContactEnquiryRequest">
+    <wsdl:part element="sch2:cardHolderContactEnquiryRequest" name="cardHolderContactEnquiryRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cardHolderContactEnquiryResponse">
+    <wsdl:part element="sch2:cardHolderContactEnquiryResponse" name="cardHolderContactEnquiryResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="cardHolderContactEnquiryService">
+    <wsdl:operation name="cardHolderContactEnquiry">
+      <wsdl:input message="tns:cardHolderContactEnquiryRequest" name="cardHolderContactEnquiryRequest"></wsdl:input>
+      <wsdl:output message="tns:cardHolderContactEnquiryResponse" name="cardHolderContactEnquiryResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="cardHolderContactEnquiryServiceSoap11" type="tns:cardHolderContactEnquiryService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="cardHolderContactEnquiry">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="cardHolderContactEnquiryRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cardHolderContactEnquiryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="cardHolderContactEnquiryServiceService">
+    <wsdl:port binding="tns:cardHolderContactEnquiryServiceSoap11" name="cardHolderContactEnquiryServiceSoap11">
+      <soap:address location="http://10.166.41.208:22220/CardHolderContactEnquiryWebservice-4.4.0/cardHolderContactEnquiry"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.166.41.208:22220/CardHolderContactEnquiryWebservice-4.4.0/cardHolderContactEnquiry</con:endpoint></con:endpoints><con:operation id="b418762f-ec21-4fed-93e2-61c555956141" isOneWay="false" action="" name="cardHolderContactEnquiry" bindingOperationName="cardHolderContactEnquiry" type="Request-Response" outputName="cardHolderContactEnquiryResponse" inputName="cardHolderContactEnquiryRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e83395ee-c389-4d73-9363-a6a7eb5341a3" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.166.41.208:22220/CardHolderContactEnquiryWebservice-4.4.0/cardHolderContactEnquiry</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:car="http://schema.domain.cortex.fis.com/cardHolderContactEnquiryService" xmlns:req="http://schema.domain.cortex.fis.com/requestDetails" xmlns:sec="http://schema.domain.cortex.fis.com/securityDetails">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <car:cardHolderContactEnquiryRequest>\r
+         <car:requestDet>\r
+            <req:messageID>?</req:messageID>\r
+            <req:instCode>?</req:instCode>\r
+            <req:userID>?</req:userID>\r
+            <req:userPassword>?</req:userPassword>\r
+            <!--Optional:-->\r
+            <req:track2>?</req:track2>\r
+            <!--Optional:-->\r
+            <req:authMethod>?</req:authMethod>\r
+            <!--Optional:-->\r
+            <req:PAN>?</req:PAN>\r
+            <!--Optional:-->\r
+            <req:cardID>?</req:cardID>\r
+            <!--Optional:-->\r
+            <req:DOB>?</req:DOB>\r
+            <!--Optional:-->\r
+            <req:CVV>?</req:CVV>\r
+            <!--Optional:-->\r
+            <req:accessCode>?</req:accessCode>\r
+            <!--Optional:-->\r
+            <req:lastName>?</req:lastName>\r
+            <req:localDate>?</req:localDate>\r
+            <req:localTime>?</req:localTime>\r
+            <!--Optional:-->\r
+            <req:crdAcptID>?</req:crdAcptID>\r
+            <!--Optional:-->\r
+            <req:loginID>?</req:loginID>\r
+            <!--Optional:-->\r
+            <req:loadFundsType>?</req:loadFundsType>\r
+            <!--Optional:-->\r
+            <req:loadSrc>?</req:loadSrc>\r
+            <!--Optional:-->\r
+            <req:secDet>\r
+               <!--Zero or more repetitions:-->\r
+               <sec:securityDetailsArray>\r
+                  <!--Optional:-->\r
+                  <sec:charPos>?</sec:charPos>\r
+                  <sec:secChkID>?</sec:secChkID>\r
+                  <sec:secValue>?</sec:secValue>\r
+               </sec:securityDetailsArray>\r
+            </req:secDet>\r
+            <!--Optional:-->\r
+            <req:itemSrc>?</req:itemSrc>\r
+         </car:requestDet>\r
+         <!--Optional:-->\r
+         <car:enquiryType>?</car:enquiryType>\r
+      </car:cardHolderContactEnquiryRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://fis.com/webservices/definitions/cardHolderContactEnquiryService/cardHolderContactEnquiryRequest"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

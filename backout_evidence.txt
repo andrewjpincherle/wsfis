@@ -1,0 +1,9 @@
+delete from nasacsrestr where instcode = 'PSP' and username = 'PSP_LIVE_WSUSER' ; 
+delete from nasacsrestr where instcode = 'PSS' and username = 'PSS_LIVE_WSUSER' ;
+
+Queries	2
+Updated Rows	2
+Execute time (ms)	292
+Fetch time (ms)	0
+Total time (ms)	292
+Finish time	Fri Oct 15 12:38:58 BST 2021

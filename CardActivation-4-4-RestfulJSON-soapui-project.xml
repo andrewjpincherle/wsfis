@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="9a01055b-8da5-4ae8-b29d-12b297753236" activeEnvironment="Default" name="CardActivation-4.4-RestfulJSON" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="aa222e47-a13c-4d15-8012-e0a73cba97bd" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://10.166.41.208:22220" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://10.166.41.208:22220</con:endpoint></con:endpoints><con:resource name="CardActivation.json" path="/CardActivationWebservice/rest/cardActivation.json" id="0837f51e-2486-490b-ae5c-62cf1f1efceb"><con:settings/><con:parameters/><con:method name="CardActivation.json 1" id="6e65baf7-2605-4276-92a9-2df3da9ed23d" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:car="https://10.166.41.208/CardActivationWebservice/rest/cardActivation.json">car:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>400</con:status><con:params/></con:representation><con:request name="ANP" id="79bc88bc-3206-4e20-acf6-836a52b8f0df" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://10.166.41.208:22220</con:endpoint><con:request>{
+  "requestDet": {
+    "authMethod": 1,
+    "cardID": "1443728700013500",
+    "instCode": "ANP",
+    "localDate": ${today},
+    "localTime": ${time},
+    "messageID": ${msgid},
+    "userID": "ANP_UAT_ADM",
+    "userPassword": "j$aX%17r"
+  }
+}</con:request><con:originalUri>https://10.166.41.208/CardActivationWebservice/rest/cardActivation.json</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="fullRequest" id="8dea5e56-64cf-4447-95d2-dd5caa2f84d4" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://10.166.41.208:22220</con:endpoint><con:request>{
+  "actMethod": 0,
+  "commonUpdateDet": {
+    "addrDet": {
+      "addressLine1": "string",
+      "addressLine2": "string",
+      "addressLine3": "string",
+      "city": "string",
+      "country": "string",
+      "county": "string",
+      "postCode": "string"
+    },
+    "crdproduct": "string",
+    "designRef": "string",
+    "firstName": "string",
+    "mobTel": "string",
+    "tel": "string",
+    "title": "string",
+    "userdata": "string",
+    "userdata1": "string",
+    "userdata2": "string",
+    "userdata3": "string",
+    "userdata4": "string"
+  },
+  "reason": "string",
+  "requestDet": {
+    "accessCode": "string",
+    "authMethod": 0,
+    "cardID": "string",
+    "crdAcptID": "string",
+    "cvv": "string",
+    "dob": "yyyy-MM-dd",
+    "instCode": "string",
+    "itemSrc": 0,
+    "lastName": "string",
+    "loadFundsType": 0,
+    "loadSrc": 0,
+    "localDate": "yyyy-MM-dd",
+    "localTime": 0,
+    "loginID": "string",
+    "messageID": 0,
+    "pan": "string",
+    "secDet": {
+      "securityDetailsArray": [
+        {
+          "charPos": 0,
+          "secChkID": 0,
+          "secValue": "string"
+        }
+      ]
+    },
+    "track2": "string",
+    "userID": "string",
+    "userPassword": "string"
+  }
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
